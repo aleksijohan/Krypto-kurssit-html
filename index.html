@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Krypto-kurssit</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+</head>
+<body class="bg-gray-950 text-white min-h-screen">
+    <nav class="bg-yellow-500 text-black sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center text-lg font-bold">
+            <h1>Krypto-kurssit</h1>
+            <div class="flex gap-8">
+                <button onclick="showPage('home')" class="hover:underline">Etusivu</button>
+                <button onclick="showPage('list')" class="hover:underline">Kaikki kryptot</button>
+                <button onclick="showPage('favorites')" class="hover:underline">Suosikit</button>
+                <button onclick="showPage('about')" class="hover:underline">Tietoja</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Etusivu -->
+    <div id="home" class="section active max-w-6xl mx-auto px-6 py-16 text-center">
+        <h2 class="text-6xl font-bold mb-6">Reaaliaikaiset krypto-kurssit</h2>
+        <p class="text-2xl mb-10">Seuraa Bitcoinia, Ethereumia ja muita kryptovaluuttoja. Tallenna suosikit suosikkilistalle!</p>
+        <button onclick="showPage('list')" class="bg-yellow-500 hover:bg-yellow-400 text-black px-12 py-5 rounded-3xl text-2xl font-bold">Aloita tästä →</button>
+    </div>
+
+    <!-- Lista -->
+    <div id="list" class="section max-w-6xl mx-auto px-6 py-8">
+        <div class="flex justify-end mb-4">
+            <label class="mr-2 text-lg font-medium">Valuutta:</label>
+            <select id="currencySelect" class="bg-gray-800 text-white px-4 py-2 rounded-lg border border-gray-700">
+                <option value="USDT">USD</option>
+                <option value="EUR">EUR</option>
+            </select>
+        </div>
+        <input id="searchInput" type="text" placeholder="Hae symbolia (esim. BTC)"
+               class="w-full mb-8 px-6 py-4 rounded-3xl bg-gray-900 text-lg" onkeyup="filterList()">
+        <div id="cryptoList" class="grid md:grid-cols-3 gap-6"></div>
+    </div>
+
+    <!-- Suosikit -->
+    <div id="favorites" class="section max-w-6xl mx-auto px-6 py-8">
+        <h2 class="text-3xl font-bold mb-6">⭐ Suosikkikryptot</h2>
+        <div id="favoritesList" class="grid md:grid-cols-3 gap-6"></div>
+    </div>
+
+    <!-- Tietoja  -->
+    <div id="about" class="section max-w-6xl mx-auto px-6 py-12 text-lg hidden">
+        <h2 class="text-3xl font-bold mb-6">Tietoja sovelluksesta</h2>
+        <p>Harjoitustyö Web-sovellusten perusteet -kurssille (2026). Käyttää Binance Public API:a ja Chart.js:ää.</p>
+    </div>
+
+    <!-- Toast-ilmoitus -->
+<div id="toast" class="fixed top-20 left-1/2 transform -translate-x-1/2 bg-green-600 text-white px-6 py-3 rounded-xl shadow-lg opacity-0 transition-opacity duration-300 z-50 hidden">
+  <span id="toastMessage"></span>
+</div>
+</body>
+</html>

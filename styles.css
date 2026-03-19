@@ -1,0 +1,24 @@
+.section {
+  display: none;
+}
+.section.active {
+  display: block;
+}
+
+/* lisätyyli*/
+.crypto-card {
+  transition: all 0.2s ease;
+}
+.crypto-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.3);
+}
+
+
+#toast {
+  transform: translate(-50%, -20px);
+  transition: all 0.3s ease;
+}
+#toast.opacity-100 {
+  transform: translate(-50%, 0);
+}
