@@ -33,7 +33,7 @@ async function fetchPrice(symbol) {
     const data = await res.json();
     return {
       symbol: symbol,
-      price: parseFloat(data.lastPrice).toFixed(currentCurrency === 'EUR' ? 2 : 4), // EUR: 2 desimaalia, USD: 4
+      price: parseFloat(data.lastPrice).toFixed(currentCurrency === 'EUR' ? 2 : 4), 
       change: parseFloat(data.priceChangePercent).toFixed(2),
       volume: parseFloat(data.volume).toFixed(0),
       currency: currentCurrency // tallenna valuutta näyttöä varten
@@ -85,7 +85,7 @@ function renderCryptoList(data) {
         ${isFavorite ? "★" : "☆"}
       </button>
     `;
-    // Volume-alert valuutan mukaan
+    
     div.onclick = () => alert(`24h volyymi: ${coin.volume} ${coin.currency}`);
     container.appendChild(div);
   });
@@ -112,7 +112,7 @@ function toggleFavorite(symbol) {
   
   localStorage.setItem("cryptoFavorites", JSON.stringify(favorites));
   
-  // Päivitä tähti listassa (uudelleenrenderöi lista)
+  // Päivitä tähti listassa 
   renderCryptoList(allData);
   
   // Päivitä suosikit-sivu jos ollaan siellä
@@ -141,13 +141,13 @@ function showToast(message, type = 'success') {
   toast.classList.remove('opacity-0');
   toast.classList.add('opacity-100');
   
-  // Katoaa 2,5 sekunnin jälkeen
+  
   setTimeout(() => {
     toast.classList.remove('opacity-100');
     toast.classList.add('opacity-0');
     setTimeout(() => {
       toast.classList.add('hidden');
-    }, 300); // odota fade-out animaatio
+    }, 300); 
   }, 2500);
 }
 
@@ -222,20 +222,54 @@ function setupCurrencyListener() {
 
       // Päivitä lista jos se on näkyvissä
       if (document.getElementById('list').classList.contains('active')) {
-        loadAllCrypto(); // Tämä hakee uudet hinnat ja renderöi uudelleen
+        loadAllCrypto(); // 
       }
 
-      // Päivitä suosikit aina (jotta data on valmiina kun siirrytään sivulle)
-      renderFavorites(); // Tämä on async, mutta ei estä muita toimintoja
+      // Päivitä suosikit 
+      renderFavorites(); 
     });
   } else {
     console.warn('currencySelect-elementtiä ei löydy');
   }
 }
 
+// Mobiili-menu toggle
+function toggleMobileMenu() {
+  console.log('toggleMobileMenu kutsuttiin');
+
+  const menu = document.getElementById('mobile-menu');
+  if (!menu) {
+    console.warn('mobile-menu ei löytynyt');
+    return;
+  }
+
+  const currentDisplay = window.getComputedStyle(menu).display;
+  console.log('Nykyinen display ennen togglea:', currentDisplay);
+
+  if (currentDisplay === 'none') {
+    menu.style.display = 'block';
+    console.log('Menu asetettu näkyviin (display: block)');
+  } else {
+    menu.style.display = 'none';
+    console.log('Menu piilotettu (display: none)');
+  }
+
+  // Poista hidden-luokka varmuudeksi jos se jää päälle
+  menu.classList.remove('hidden');
+}
+
 // Käynnistys
 window.onload = () => {
   tailwind.config = { content: ["*"] };
   setupCurrencyListener();
+
+  // Kuuntelu hamburger-painikkeelle
+  const menuToggle = document.getElementById('menu-toggle');
+  console.log('menu-toggle löytyi:', menuToggle); // debug
+  if (menuToggle) {
+    menuToggle.addEventListener('click', toggleMobileMenu);
+  } else {
+    console.warn('menu-toggle-elementtiä ei löydy');
+  }
   showPage('home');
 };

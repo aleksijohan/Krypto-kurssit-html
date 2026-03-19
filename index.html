@@ -6,13 +6,17 @@
     <title>Krypto-kurssit</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="styles.css">
-    <script src="script.js"></script>
 </head>
 <body class="bg-gray-950 text-white min-h-screen">
-    <nav class="bg-yellow-500 text-black sticky top-0 z-50">
-        <div class="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center text-lg font-bold">
-            <h1>Krypto-kurssit</h1>
-            <div class="flex gap-8">
+    <nav class="bg-yellow-500  sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+            
+            <h1 class="text-2xl font-bold">₿ Krypto-kurssit</h1>
+
+            <button id="menu-toggle" class="md:hidden focus:outline-none text-3xl">
+            ☰ 
+            </button>
+            <div id="nav-links" class="hidden md:flex gap-8 text-lg font-bold">
                 <button onclick="showPage('home')" class="hover:underline">Etusivu</button>
                 <button onclick="showPage('list')" class="hover:underline">Kaikki kryptot</button>
                 <button onclick="showPage('favorites')" class="hover:underline">Suosikit</button>
@@ -20,6 +24,28 @@
             </div>
         </div>
     </nav>
+
+    <!-- Mobiili-menu -->
+    <div id="mobile-menu" class="hidden fixed inset-x-0 top-[4.5rem] z-[100] bg-gray-900 px-6 py-6 text-white border-t-4 border-yellow-500 shadow-2xl md:hidden min-h-[50vh]">
+        <div class="flex flex-col gap-5 text-xl font-semibold">
+            <button onclick="showPage('home'); toggleMobileMenu()" 
+                class="hover:bg-gray-800 py-4 px-5 rounded-lg text-left transition">
+                Etusivu
+            </button>
+            <button onclick="showPage('list'); toggleMobileMenu()" 
+                class="hover:bg-gray-800 py-4 px-5 rounded-lg text-left transition">
+                Kaikki kryptot
+            </button>
+            <button onclick="showPage('favorites'); toggleMobileMenu()" 
+                class="hover:bg-gray-800 py-4 px-5 rounded-lg text-left transition">
+                Suosikit
+            </button>
+            <button onclick="showPage('about'); toggleMobileMenu()" 
+                class="hover:bg-gray-800 py-4 px-5 rounded-lg text-left transition">
+                Tietoja
+            </button>
+        </div>
+    </div>
 
     <!-- Etusivu -->
     <div id="home" class="section active max-w-6xl mx-auto px-6 py-16 text-center">
@@ -58,5 +84,6 @@
 <div id="toast" class="fixed top-20 left-1/2 transform -translate-x-1/2 bg-green-600 text-white px-6 py-3 rounded-xl shadow-lg opacity-0 transition-opacity duration-300 z-50 hidden">
   <span id="toastMessage"></span>
 </div>
+<script src="script.js"></script>
 </body>
 </html>
