@@ -1,10 +1,10 @@
 # Krypto-kurssit
 
-Tämä on harjoitustyö Oulun ammattikorkeakoulun Web-sovellusten perusteet -kurssille (kevät 2026). Sovellus näyttää reaaliaikaisia kryptovaluuttojen hintoja Binance:n julkisesta API:sta ja mahdollistaa suosikkikryptojen tallentamisen selaimen localStorageen.
+Tämä on harjoitustyö Web-sovellusten perusteet -kurssille (kevät 2026). Sovellus näyttää reaaliaikaisia kryptovaluuttojen hintoja Binance:n julkisesta API:sta ja mahdollistaa suosikkikryptojen tallentamisen selaimen localStorageen.
 
-## Mitä sovellus tekee
+## Mitä sovellus tekee ?
 
-- Näyttää suosituimpien kryptojen (BTC, ETH, SOL jne.) reaaliaikaiset hinnat, 24 h muutosprosentin ja volyymin.
+- Näyttää suosituimpien kryptojen (BTC, ETH, SOL jne.) reaaliaikaiset hinnat ja volyymin.
 - Mahdollistaa kryptojen lisäämisen/poistamisen suosikeista tähdellä klikkaamalla.
 - Tallentaa suosikit selaimen localStorageen.
 - Näyttää toast-ilmoituksia lisäyksestä ja poistosta.
