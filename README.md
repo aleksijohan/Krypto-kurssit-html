@@ -13,7 +13,7 @@ Tämä on harjoitustyö Web-sovellusten perusteet -kurssille (kevät 2026). Sove
 
 ## Käyttöohjeet
 
-1. Avaa sovellus selaimessa (GitHub Pages) tai kloonaamalla reposity ja avaamalla index.html liveserverillä
+1. Avaa sovellus selaimessa (GitHub Pages) tai kloonaamalla reposity ja avaamalla index.html
 2. Etusivulta pääset "Kaikki kryptot" -sivulle.
 3. Klikkaa tähteä (☆ → ★) lisätäksesi kryptovaluutan suosikkeihin.
 4. Suosikit-sivulla näet tallentamasi kryptot ja voit poistaa niitä ×-napilla.
