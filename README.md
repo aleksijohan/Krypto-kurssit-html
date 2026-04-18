@@ -1,6 +1,6 @@
 # Krypto-kurssit
 
-Tämä on harjoitustyö Web-sovellusten perusteet -kurssille (kevät 2026). Sovellus näyttää reaaliaikaisia kryptovaluuttojen hintoja Binance:n julkisesta API:sta ja mahdollistaa suosikkikryptojen tallentamisen selaimen localStorageen.
+Tämä on harjoitustyö Web-sovellusten perusteet -kurssille (kevät 2026). Sovellus näyttää reaaliaikaisia kryptovaluuttojen hintoja ja käyttää  Binance:n julkista API:a (https://api.binance.com) ja mahdollistaa suosikkikryptojen tallentamisen selaimen localStorageen.
 
 ## Mitä sovellus tekee ?
 
