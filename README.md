@@ -24,4 +24,4 @@ Tämä on harjoitustyö Web-sovellusten perusteet -kurssille (kevät 2026). Sove
 Ei vaadi asennusta tai palvelinta – pelkkä selain riittää.
 
 1. Kloonaa repo
-   git clone https://github.com/sinun-kayttajanimi/krypto-kurssit.git
+   git clone https://github.com/aleksijohan/krypto-kurssit.git
